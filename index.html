@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        
+    </head>
+    <body>
+      <button onclick="draw()">Start Drawing</button>
+      <button onclick="draw()">Speed Up</button>
+      <button onclick="pauseDraw()">Pause/Unpause</button>
+      <button onclick="reload()">Reset</button>
+        <canvas id="canvas" width="1700" height="800"></canvas>
+        <script>
+        let pause = false;
+        function pauseDraw(){
+            if(pause){pause = false;}else{pause = true;}
+        }
+function reload(){
+    window.location.reload();
+}
+function draw() {
+  var canvas = document.getElementById('canvas');
+  if (canvas.getContext){
+    var ctx = canvas.getContext('2d');
+   let x;
+   let y;
+   let z;
+   let a;
+   let x1;
+   let y1;
+   let z1;
+   let b;
+
+    function draw() {
+        if(!pause){
+      x = Math.floor(Math.random() * 700)
+   y = Math.floor(Math.random() * 700)
+   z = Math.floor(Math.random() * 700)
+   a = Math.floor(Math.random() * 700)
+   x1 = Math.floor(Math.random() * 256)
+   y1 = Math.floor(Math.random() * 256)
+   z1 = Math.floor(Math.random() * 256)
+   b = Math.floor(Math.random() * 20)
+   ctx.strokeStyle = `rgb(${x1}, ${y1}, ${z1})`
+   ctx.lineWidth = b;
+    ctx.strokeRect(x,y,z,a);
+    }}
+setInterval(draw, 100)
+}   
+ }
+</script>
+    </body>
+</html>
